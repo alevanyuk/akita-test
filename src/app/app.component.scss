@@ -1,0 +1,37 @@
+:host {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  height: 100%;
+
+  > div.header {
+    display: flex;
+    flex: 0 0 70px;
+    background: black;
+  }
+
+  > div.main {
+    flex: 1;
+    padding: 1em;
+  }
+
+  > div.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: black;
+    color: white;
+    flex: 0 0 30px;
+  }
+}
+//
+//:host ::ng-deep {
+//  [pDraggable] {
+//    cursor: move;
+//  }
+//}
+
+p {
+  font-family: Lato;
+}

@@ -1,0 +1,60 @@
+<div class="card">
+    <p-fieldset>
+        <ng-template pTemplate="header">
+            <div class="flex align-items-center text-primary">
+                <span class="pi pi-user mr-2"></span>
+                <span class="font-bold text-lg">CREATE TASK</span>
+            </div>
+        </ng-template>
+        <app-create-task></app-create-task>
+    </p-fieldset>
+</div>
+
+<div class="card">
+    <p-fieldset>
+        <ng-template pTemplate="header">
+            <div class="flex align-items-center text-primary">
+                <span class="pi pi-user mr-2"></span>
+                <span class="font-bold text-lg">TASK BOARD</span>
+            </div>
+        </ng-template>
+        <div style="display: flex; height: 300px; width: 100%; padding: 10px; background: red; justify-content: space-around">
+            <div style="display: flex; flex: 0 0 24%; background: green">
+                <app-task-panel
+                        [panelName]="'newMap'"
+                        [panelItems]="newMap"
+                        (dragStartEvent)="dragStart($event)"
+                        (dragEndEvent)="dragEnd($event)"
+                        (dropEvent)="drop($event)"
+                ></app-task-panel>
+            </div>
+            <div style="display: flex; flex: 0 0 20%; background: green">
+                <app-task-panel
+                        [panelName]="'todo'"
+                        [panelItems]="todo"
+                        (dragStartEvent)="dragStart($event)"
+                        (dragEndEvent)="dragEnd($event)"
+                        (dropEvent)="drop($event)">
+                </app-task-panel>
+            </div>
+            <div style="display: flex; flex: 0 0 20%; background: green">
+                <app-task-panel
+                        [panelName]="'doing'"
+                        [panelItems]="doing"
+                        (dragStartEvent)="dragStart($event)"
+                        (dragEndEvent)="dragEnd($event)"
+                        (dropEvent)="drop($event)">
+                </app-task-panel>
+            </div>
+            <div style="display: flex; flex: 0 0 20%; background: green">
+                <app-task-panel
+                        [panelName]="'done'"
+                        [panelItems]="done"
+                        (dragStartEvent)="dragStart($event)"
+                        (dragEndEvent)="dragEnd($event)"
+                        (dropEvent)="drop($event)">
+                </app-task-panel>
+            </div>
+        </div>
+    </p-fieldset>
+</div>

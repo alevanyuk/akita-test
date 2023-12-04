@@ -1,0 +1,18 @@
+<div [formGroup]="createFormGroup" style="display: flex; flex: 0 0 80%;">
+    <p-inputGroup>
+        <input pInputText placeholder="Title" formControlName="title"/>
+    </p-inputGroup>
+    <p-inputGroup>
+        <input pInputText placeholder="Time" formControlName="time"/>
+    </p-inputGroup>
+
+    <p-inputGroup>
+        <input pInputText placeholder="Priority" formControlName="priority"/>
+    </p-inputGroup>
+</div>
+
+<button pButton pRipple label="Submit" class="p-button-success" (click)="createTask()"
+        [disabled]="createFormGroup.invalid"></button>
+
+
+
