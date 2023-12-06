@@ -1,53 +1,35 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Actions} from "@datorama/akita-ng-effects";
+import {dragEnd, dragStart, dropTask, initTaskList} from "../../state/task-board.actions";
+import {createNewTaskList, Task, TaskList} from "../../state/task-board.model";
+import {ID} from "@datorama/akita";
 
 @Component({
   selector: 'app-task-panel',
   templateUrl: './task-panel.component.html',
   styleUrls: ['./task-panel.component.scss']
 })
-export class TaskPanelComponent {
+export class TaskPanelComponent implements OnInit {
 
-  @Input() panelName!: string;
-  @Input() panelItems!: any;
+  @Input() panel!: TaskList;
 
-  @Output() dragStartEvent = new EventEmitter<any>();
-  @Output() dragEndEvent = new EventEmitter<any>();
-  @Output() dropEvent = new EventEmitter<any>();
+  constructor(private actions: Actions) {}
 
-  // dragedColor = null;
-  // dragedList = new Set();
-  //
-  // newMap = new Set();
-  //
-  // todo = new Set([]);
-  //
-  // doing = new Set([]);
-  //
-  // done = new Set([]);
-  //
-  // droped = new Set([]);
+  ngOnInit() {}
 
-  dragStart( e: any, c:any) {
-    console.log('dragStart task panel')
-    this.dragStartEvent.emit({e, c})
-    // this.dragedColor = c;
-    // this.dragedList = d;
+  dragStart( task: Task, panelId: ID) {
+    console.log('dragStart')
+    console.log('task', task)
+    this.actions.dispatch(dragStart({task, panelId}))
   }
 
-  dragEnd(e:any) {
-    console.log('dragEnd task panel')
-    this.dragEndEvent.emit({e})
-    // this.dragedList.delete(c);
-    // if (!this.dragedColor) {
-    //   this.dragedList.delete(c);
-    //   // this.dragedList.clear();
-    //   // this.dragedColor = null;
-    // }
+  dragEnd(panel: any) {
+    console.log('dragEnd', panel)
+    this.actions.dispatch(dragEnd())
   }
 
-  drop(panelItems: any) {
-    console.log('drop task panel')
-    this.dropEvent.emit({panelItems});
-
+  drop(panelId: ID) {
+    console.log('drop', panelId)
+    this.actions.dispatch(dropTask({panelId}))
   }
 }

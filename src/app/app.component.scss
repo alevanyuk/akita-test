@@ -11,6 +11,7 @@
   }
 
   > div.main {
+    display: flex;
     flex: 1;
     padding: 1em;
   }
@@ -24,14 +25,4 @@
     color: white;
     flex: 0 0 30px;
   }
-}
-//
-//:host ::ng-deep {
-//  [pDraggable] {
-//    cursor: move;
-//  }
-//}
-
-p {
-  font-family: Lato;
 }

@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="progress-spinner" *ngIf="loading$ | async">
+    <p-progressSpinner></p-progressSpinner>
+</div>
+<div class="container">
+    <h1>
+        Welcome!
+    </h1>
+
+    <ng-container *ngrxLet="ftpAddress$ | async; let ftpAddress">
+        <!-- Вывести ftp address из стора -->
+        <div>Ftp address: {{ftpAddress?.address}}</div>
+        <!-- Вывести ftp port из стора -->
+        <div>Ftp port: {{ftpAddress?.port}}</div>
+    </ng-container>
+
+    <ng-container *ngrxLet="ftpCredentials$ | async; let ftpCredentials">
+        <!-- Вывести ftp username из стора -->
+        <div>Ftp username: {{ftpCredentials?.username}}</div>
+
+        <!-- Вывести ftp password из стора -->
+        <div>Ftp password: {{ftpCredentials?.password}}</div>
+    </ng-container>
+
+    <br/>
+    <div>Raw ftp settings: {{ (ftpQuery.selectRawFtpSettings() | async) }}</div>
+</div>

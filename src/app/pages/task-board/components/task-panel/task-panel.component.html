@@ -1,10 +1,10 @@
 <div class="title">
-    {{panelName}}
+    {{panel.name}}
 </div>
 <div class="main" pDroppable>
-        <p-scrollPanel pDroppable (drop)="drop(panelItems)" [style]="{ width: '100%', height: '100%' }">
-            <div *ngFor="let item of panelItems" pDraggable (onDragStart)="dragStart(item, panelItems)" (onDragEnd)="dragEnd(item)">
-                <app-task-item [task]="item"></app-task-item>
-            </div>
+        <p-scrollPanel pDroppable (drop)="drop(panel.id)" [style]="{ width: '100%', height: '100%' }">
+            <ng-container *ngFor="let item of panel.items">
+                <app-task-item pDraggable (onDragStart)="dragStart(item, panel.id)" (onDragEnd)="dragEnd(panel)" [task]="item"></app-task-item>
+            </ng-container>
         </p-scrollPanel>
 </div>

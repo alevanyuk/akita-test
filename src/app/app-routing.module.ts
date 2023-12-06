@@ -8,13 +8,13 @@ const appRoutes: Routes = [
     redirectTo: "/task-board",
     pathMatch: "full",
   },
-  // {
-  //   path: "home",
-  //   loadChildren: () =>
-  //       import("./components/dashboard/dashboard.module").then(
-  //           (m) => m.AppDashboardPageModule
-  //       ),
-  // },
+  {
+    path: "ftp",
+    loadChildren: () =>
+        import("./pages/ftp/ftp.module").then(
+            (m) => m.FtpModule
+        ),
+  },
   {
     path: "task-board",
     loadChildren: () =>
@@ -27,7 +27,7 @@ const appRoutes: Routes = [
 export const routes: Routes = [
   {
     path: "",
-    redirectTo: "/task-board",
+    redirectTo: "/ftp",
     pathMatch: "full",
   },
   {
@@ -36,7 +36,7 @@ export const routes: Routes = [
   },
   {
     path: "**",
-    redirectTo: "/task-board",
+    redirectTo: "/ftp",
   },
 ];
 
@@ -45,10 +45,3 @@ export const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-
-// @NgModule({
-//   imports: [RouterModule.forRoot(routes)],
-//   exports: [RouterModule]
-// })
-// export class AppRoutingModule { }

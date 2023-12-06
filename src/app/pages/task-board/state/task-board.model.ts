@@ -1,5 +1,11 @@
-import {guid} from "@datorama/akita";
+import {guid, ID} from "@datorama/akita";
 
+export interface TaskList {
+  id: ID;
+  name: string;
+  date: number | Date;
+  items: Task[];
+}
 export interface Task {
   id: number | string;
   title: string;
@@ -12,4 +18,13 @@ export function createNewTask(params: Partial<Task>) {
     id: guid(),
     ...params
   } as Task;
+}
+
+export function createNewTaskList(listName: string): TaskList {
+  return {
+    id: guid(),
+    name: listName,
+    date: new Date(),
+    items: []
+  }
 }
