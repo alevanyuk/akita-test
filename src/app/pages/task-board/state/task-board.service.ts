@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {TaskBoardStore} from './task-board.store';
 import {Task, TaskList} from "./task-board.model";
-import {HttpClient} from "@angular/common/http";
 import {ID} from "@datorama/akita";
 import {TaskBoardQuery} from "./task-board.query";
 
