@@ -4,7 +4,7 @@
 <div class="main" pDroppable>
         <p-scrollPanel pDroppable (drop)="drop(panel.id)" [style]="{ width: '100%', height: '100%' }">
             <ng-container *ngFor="let item of panel.items">
-                <app-task-item pDraggable (onDragStart)="dragStart(item, panel.id)" (onDragEnd)="dragEnd(panel)" [task]="item"></app-task-item>
+                <app-task-item pDraggable (onDragStart)="dragStart(item, panel.id)" (onDragEnd)="dragEnd()" [task]="item"></app-task-item>
             </ng-container>
         </p-scrollPanel>
 </div>

@@ -12,8 +12,7 @@ export class TaskBoardService {
 
   constructor(
       private query: TaskBoardQuery,
-      private taskBoardStore: TaskBoardStore,
-      private http: HttpClient) {}
+      private taskBoardStore: TaskBoardStore) {}
 
   addList(taskList: TaskList) {
     console.log(taskList)

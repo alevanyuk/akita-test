@@ -22,7 +22,7 @@ export class TaskPanelComponent implements OnInit {
     this.actions.dispatch(dragStart({task, panelId}))
   }
 
-  dragEnd(panel: any) {
+  dragEnd() {
     this.actions.dispatch(dragEnd())
   }
 
