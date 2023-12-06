@@ -14,7 +14,6 @@ export class TaskBoardService {
       private taskBoardStore: TaskBoardStore) {}
 
   addList(taskList: TaskList) {
-    console.log(taskList)
     this.taskBoardStore.add(taskList)
     if (taskList?.name === 'newTaskList') {
       this.defaultPanelId = taskList.id;
