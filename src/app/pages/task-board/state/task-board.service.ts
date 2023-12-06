@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {TaskBoardStore} from './task-board.store';
 import {Task, TaskList} from "./task-board.model";
 import {HttpClient} from "@angular/common/http";
-import {dragStart} from "./task-board.actions";
 import {ID} from "@datorama/akita";
 import {TaskBoardQuery} from "./task-board.query";
 
@@ -31,13 +30,6 @@ export class TaskBoardService {
       this.taskBoardStore.setActive(this.defaultPanelId);
     }
   }
-
-  deleteList(id: ID) {
-    this.taskBoardStore.remove(id);
-  }
-
-
-
 
   addTaskInList(task: Task) {
     this.taskBoardStore.updateActive( (state) => {
