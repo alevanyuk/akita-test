@@ -20,6 +20,10 @@ export class TaskBoardService {
     }
   }
 
+  removeAll() {
+    this.taskBoardStore.remove();
+  }
+
   selectList(id?: ID) {
     if (id) {
       this.taskBoardStore.setActive(id);

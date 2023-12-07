@@ -4,18 +4,19 @@
   flex: 1;
   height: 100%;
   width: 100%;
-  background: yellow;
   border: 1px solid black;
 }
 
-.title {
+div.title {
+  display: flex;
   flex: 0 0 20%;
-  background: blue;
+  color: white;
+  align-items: center;
+  justify-content: center;
 }
 
 .main {
   flex: 1;
-  background: greenyellow;
   padding: 10px;
   overflow-y: auto;
 }

@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
+
 import {Task} from "../../../state/task-board.model";
 
 @Component({
@@ -6,12 +7,6 @@ import {Task} from "../../../state/task-board.model";
   templateUrl: './task-item.component.html',
   styleUrls: ['./task-item.component.scss']
 })
-export class TaskItemComponent implements OnInit {
+export class TaskItemComponent {
   @Input() task!: Task;
-
-  ngOnInit() {
-    console.log(this.task)
-  }
-
-
 }

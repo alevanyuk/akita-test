@@ -1,4 +1,36 @@
 :host {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  user-select: none;
 }
+
+div.title:nth-child(1) {
+  display: flex;
+  flex: 0 0 20%;
+}
+
+app-task-panel:nth-child(1) {
+  div.title {
+    background-color: gray;
+  }
+}
+
+app-task-panel:nth-child(2) {
+  div.title {
+    background-color: #bf4040;
+  }
+}
+
+app-task-panel:nth-child(3) {
+  div.title {
+    background-color: orange;
+  }
+}
+
+app-task-panel:nth-child(4) {
+  div.title {
+    background-color: greenyellow;
+  }
+}
+

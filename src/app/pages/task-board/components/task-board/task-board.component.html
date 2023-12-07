@@ -18,11 +18,11 @@
                 <span class="font-bold text-lg">TASK BOARD</span>
             </div>
         </ng-template>
-        <div style="display: flex; height: 300px; width: 100%; padding: 10px; background: red; justify-content: space-around">
+        <div style="display: flex; height: 400px; width: 100%; padding: 10px; justify-content: space-around">
             <ng-container *ngFor="let listItem of list$ | async">
-                <div style="display: flex; flex: 0 0 20%; background: green">
+<!--                <div style="display: flex; flex: 0 0 20%; background: green">-->
                     <app-task-panel [panel]="listItem"></app-task-panel>
-                </div>
+<!--                </div>-->
             </ng-container>
         </div>
     </p-fieldset>
